@@ -1,0 +1,864 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@font-face {
+  font-family: "Utendo-Bold";
+  src: url("utendo/Utendo-Black.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Utendo-Light";
+  src: url("utendo/Utendo-ExtraLight.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Utendo-Hairline";
+  src: url("utendo/Utendo-Hairline.ttf") format("truetype");
+}
+
+/*HEADER*/
+.cabeçalho {
+  font-family: "Utendo-Bold";
+  height: 80px;
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 80px;
+  border-bottom: 3px solid #edfe3c;
+}
+
+.logo {
+  display: flex;
+  gap: 15px;
+  font-size: 2rem;
+}
+
+.logo a {
+  margin-left: 20px;
+  font-size: 2rem;
+  padding-top: 3px;
+  color: #fff;
+}
+
+.logo span {
+  color: #edfe3c;
+}
+
+.nav-links {
+  display: flex;
+  gap: 30px;
+}
+
+.nav-links li a {
+  padding: 30px;
+  color: #fff;
+  font-weight: bolder;
+  font-size: 15px;
+  font-family: "Utendo-Light";
+}
+
+.nav-links li a:hover {
+  color: #edfe3c;
+}
+
+#home-link {
+  border: 1px solid #edfe3c;
+  padding: 15px;
+}
+
+#home-link:hover {
+  background-color: #edfe3c;
+  color: black;
+}
+
+/*MENU PARA RESPONSIVIDADE*/
+
+.menu {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 8px;
+  border: 0;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+  background-color: #edfe3c;
+}
+
+.overlay {
+  width: 0%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 9;
+  position: fixed;
+  left: 0;
+  top: 0;
+  overflow-x: hidden;
+  transition: all 0.5;
+}
+
+.closebtn {
+  position: absolute;
+  top: 25px;
+  right: 45px;
+  font-size: 1rem;
+  border-radius: 4px;
+  padding: 8px;
+  margin: 8px;
+  cursor: pointer;
+  background-color: #edfe3c;
+}
+
+.menu-list {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  right: 45px;
+  text-align: center;
+  margin-top: 30px;
+  font-family: "Utendo-Bold";
+}
+
+.menu-list a {
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 8px;
+  display: block;
+  transition: 0.3s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #494e12;
+}
+
+/*MAIN*/
+main {
+  height: 92vh;
+  background: linear-gradient(to bottom, #000000, #494e12);
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  font-family: "Utendo-Bold";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 700;
+  align-self: center;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  text-transform: uppercase;
+  font-weight: 900;
+  color: #fff;
+  padding-top: 2rem;
+}
+
+.text-title {
+  color: #edfe3c;
+  font-weight: 800;
+  font-size: 3rem;
+  border-right: 4px solid;
+  width: 15ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 3s steps(15), blinking 0.5s infinite step-end alternate;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blinking {
+  50% {
+    border-color: transparent;
+  }
+}
+
+.text-h3 {
+  margin-bottom: 5rem;
+  color: #fff;
+  font-weight: 800;
+  font-size: 1rem;
+  border-right: 4px solid;
+  width: 26ch;
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing1 2s steps(26), blinking1 0.5s infinite step-end alternate;
+  margin: auto;
+}
+
+@keyframes typing1 {
+  from {
+    width: 0;
+  }
+}
+
+@keyframes blinking1 {
+  50% {
+    border-color: transparent;
+  }
+}
+
+/*BUTTON*/
+.btn-container {
+  cursor: pointer;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.btn {
+  padding: 1.5rem;
+  width: 12rem;
+  font-size: 1rem;
+  background-color: transparent;
+  font-family: "Utendo-Light";
+  letter-spacing: 4px;
+  outline: none;
+  animation: anime;
+  cursor: pointer;
+  color: #fefefe;
+  transition: 3ms all;
+}
+
+.btn a {
+  text-decoration: none;
+  color: #fefefe;
+}
+
+.btn:hover {
+  border-color: #edfe3c;
+}
+
+@keyframes anime {
+  0% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1.05);
+  }
+}
+
+.btn-color-1,
+.btn-color-2:hover {
+  animation-name: anime;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+/*ICONES DE REDE SOCIAIS*/
+#socials-icons a i {
+  margin-right: 25px;
+}
+
+#socials-icons a i:hover {
+  opacity: 0.5;
+}
+
+/*SOBRE*/
+
+.sobre {
+  background: linear-gradient(to right, #000000, #33194d);
+  padding: 5rem;
+}
+
+.title-sobre {
+  padding-top: 100px;
+  margin: auto;
+  font-family: "Utendo-Bold";
+  color: #a954ff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.paragrafo-container {
+  text-align: center;
+  color: #fff;
+  font-size: 1.5rem;
+  font-family: "Utendo-Light";
+  max-width: 80rem;
+  margin: auto;
+  line-height: 1.6;
+  letter-spacing: 3px;
+}
+
+.paragrafo-container span {
+  font-weight: bold;
+}
+
+.title-habilidade {
+  padding-top: 100px;
+  margin: auto;
+  font-family: "Utendo-Bold";
+  color: #fff;
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.title-habilidade span {
+  color: #a954ff;
+}
+
+.experience-sub-title {
+  text-align: center;
+  color: #555;
+  font-size: 1.5rem;
+  font-family: "Utendo-Light";
+  max-width: 80rem;
+  margin: auto;
+  line-height: 1.6;
+  letter-spacing: 3px;
+  margin: 50px;
+}
+
+.article-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  font-family: "Utendo-Hairline";
+  color: #fff;
+  margin-bottom: 100px;
+}
+
+article {
+  border: 1px solid #33194d;
+  margin: 5px;
+  padding: 5px;
+  width: 50px;
+  height: 50px;
+}
+
+article:hover {
+  background-color: #a954ff;
+}
+
+article .icon1 {
+  cursor: pointer;
+  height: 2.5rem;
+  transition: all 0.8s ease-in-out;
+}
+
+h3 {
+  margin-top: 8px;
+  text-align: center;
+}
+
+/*PROJETOS*/
+
+.project {
+  height: 100vh;
+  background: linear-gradient(to left, #000000, #671553);
+}
+
+.title-project {
+  padding-top: 100px;
+  margin: auto;
+  font-family: "Utendo-Bold";
+  color: #f43ed9;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  margin-bottom: 3.5rem;
+}
+
+.slider {
+  max-width: 1250px;
+  position: relative;
+  width: 70%;
+  margin: auto;
+  padding-top: 4rem;
+}
+
+.slides {
+  display: flex;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+
+.project-card {
+  flex: 0 0 auto;
+  height: 600px;
+  width: 400px;
+  margin-right: 20px;
+  box-shadow: 0 0 5px #f43ed9;
+  border-radius: 10px;
+
+  border: 1px solid #f43ed9;
+  background-color: rgba(55, 14, 56, 0.1);
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.titles-project h3 {
+  padding: 8px;
+  font-family: "Utendo-Bold";
+  color: #fff;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.titles-project span {
+  color: #f43ed9;
+}
+
+.titles-project p {
+  padding: 8px;
+  text-align: center;
+  color: #fff;
+  font-family: "Utendo-Light";
+  font-weight: 100;
+  letter-spacing: 2px;
+}
+
+.button-tech {
+  margin: auto;
+  padding: 1px;
+  text-align: center;
+}
+
+.button-tech button {
+  font-family: "Utendo-Light";
+
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid #fff;
+  color: #ffffff;
+  background-color: rgba(48, 17, 52, 0.5);
+  padding: 8px;
+  letter-spacing: 2px;
+  margin-right: 2px;
+}
+
+#html:hover {
+  background-color: #fff;
+  color: #000000;
+  font-family: "Utendo-Bold";
+}
+
+#css {
+  background-color: #f43ed9;
+  border: 1px solid #f43ed9;
+  font-family: "Utendo-Bold";
+}
+
+#react:hover {
+  background-color: #fff;
+  color: #000000;
+  font-family: "Utendo-Bold";
+}
+
+#node:hover {
+  background-color: #fff;
+  color: #000000;
+  font-family: "Utendo-Bold";
+}
+
+/*BUTTON CARD*/
+
+.project-links a {
+  display: block;
+  margin: auto;
+  width: 250px;
+  margin-top: 1rem;
+  padding: 8px;
+  text-align: center;
+  background-color: rgba(55, 14, 56, 0.1);
+  font-family: "Utendo-Light";
+  letter-spacing: 2px;
+  font-weight: 700;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button-link {
+  border: 1px solid #fff;
+  color: #ffffff;
+}
+
+.button-link:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
+.button-link1 {
+  border: 1px solid #f43ed9;
+  color: #f43ed9;
+}
+
+.button-link1:hover {
+  background-color: #f43ed9;
+  color: #fff;
+}
+
+/*BUTTON SETAS*/
+#prev,
+#next {
+  position: absolute;
+  top: 90%;
+  height: 50px;
+  width: 50px;
+  transform: translateY(-50%);
+  background-color: #f43ed9c9;
+  color: #ffffff;
+  font-size: 1rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: #fff;
+  color: #000000;
+}
+
+#prev {
+  left: -20px;
+}
+
+#next {
+  right: -20px;
+}
+
+/*CONTATO*/
+
+.form-container {
+  background: linear-gradient(to top, #000000, #0d345f);
+}
+
+.title-contato {
+  padding-top: 100px;
+  margin: auto;
+  font-family: "Utendo-Bold";
+  color: #0d6aff;
+  font-size: 3rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+}
+
+.title-p {
+  font-family: "Utendo-Hairline";
+  font-weight: 600;
+  letter-spacing: 3px;
+  width: 50%;
+  margin: auto;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.contact-container {
+  padding: 1rem;
+  text-align: center;
+}
+
+.form {
+  background-color: rgba(29, 64, 102, 0.2);
+  padding: 4rem;
+  width: 50%;
+  border-radius: 5px;
+  margin: 2rem auto 0 auto;
+}
+
+input {
+  background-color: rgba(29, 64, 102, 0.3);
+  outline: none;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  width: 60%;
+  border: none;
+  cursor: pointer;
+  color: #0d6aff;
+  border-bottom: 1px solid #0d6aff;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-family: "Utendo-Hairline";
+}
+
+textarea {
+  background-color: rgba(29, 64, 102, 0.3);
+  outline: none;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  width: 60%;
+  border: none;
+  cursor: pointer;
+  color: #0d6aff;
+  border-bottom: 1px solid #0d6aff;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  font-weight: 600;
+  font-family: "Utendo-Hairline";
+}
+
+.btn-contact {
+  padding: 1.6rem;
+  width: 40%;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: rgba(29, 64, 102, 0.3);
+  border: 1px solid #0d6aff;
+  font-family: "Utendo-Bold";
+  letter-spacing: 2px;
+  cursor: pointer;
+  color: #fefefe;
+  transition: box-shadow 0.3s;
+}
+
+.btn-contact:hover {
+  box-shadow: 5px 8px 20px rgba(246, 241, 241, 0.3);
+}
+
+/*FOOTER*/
+
+.footer {
+  background-color: #000000;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  border-top: 3px solid #0d6aff;
+}
+
+.footer-content {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+}
+
+.footer-icons a {
+  font-size: 40px;
+  margin-right: 40px;
+  color: #fefefe;
+}
+
+.footer-icons a:hover {
+  color: #0d345f;
+}
+
+.copyright {
+  font-family: "Utendo-Bold";
+  letter-spacing: 2px;
+}
+
+.copyright a {
+  color: #0d6aff;
+}
+
+.copyright a:hover {
+  text-decoration: underline;
+}
+
+/*RESPONSIVIDADE CABEÇALHO*/
+
+@media (max-width: 1149px) {
+  .container-project {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  input {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 1024px) {
+  .cabeçalho {
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 0;
+    gap: 15px;
+  }
+
+  .nav-links a {
+    padding: 15px;
+  }
+
+  .form {
+    width: 100%;
+  }
+  .dark {
+    display: none;
+  }
+}
+
+@media (max-width: 732px) {
+  .article-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .btn-contact {
+    width: 50%;
+  }
+}
+
+/*RESPONSIVIDADE - MENU- MAIN*/
+
+@media (max-width: 593px) {
+  .nav-links {
+    display: none;
+  }
+
+  .logo {
+    margin-top: 20px;
+    margin-right: 150px;
+  }
+
+  .menu {
+    display: block;
+  }
+
+  .menu-list a {
+    margin-left: 90px;
+  }
+
+  .text {
+    height: 50vh;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .text-title {
+    font-size: 2rem;
+  }
+
+  .text-h3 {
+    font-size: 1rem;
+  }
+
+  .logo {
+    margin-top: 50px;
+  }
+}
+
+@media (max-width: 414px) {
+  .dark {
+    display: flex;
+    position: absolute;
+    bottom: 51px;
+    left: 91px;
+  }
+}
+
+@media (max-width: 390px) {
+  .cabeçalho {
+    justify-content: center;
+    flex-direction: column;
+    padding: 50px 0;
+    gap: 10px;
+  }
+
+  .nav-links a {
+    padding: 15px;
+  }
+
+  .slider {
+    width: 80%;
+  }
+
+  .titles-project {
+    font-size: 0.7rem;
+  }
+
+  .project-card {
+    height: 500px;
+    width: 300px;
+  }
+
+  .form {
+    width: 100%;
+  }
+
+  .btn-contact {
+    width: 50%;
+    font-size: 0.8rem;
+  }
+}
+
+.dark {
+  width: 50px;
+  height: 30px;
+  background-color: #edfe3c;
+  border-radius: 150px;
+  position: relative;
+  cursor: pointer;
+}
+
+.dark .indicador {
+  width: 30px;
+  height: 30px;
+  background-color: #000000;
+  border-radius: 50%;
+  transform: scale(0.9);
+  position: absolute;
+  left: 0;
+  transition: 0.5s;
+}
+
+.dark.dark1 {
+  background-color: #000000;
+}
+
+.dark.dark1 .indicador {
+  left: 18px;
+  background-color: #edfe3c;
+}
