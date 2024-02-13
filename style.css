@@ -12,6 +12,7 @@ body {
 
 html {
   scroll-behavior: smooth;
+
 }
 
 @font-face {
@@ -91,7 +92,7 @@ html {
   display: none;
   position: absolute;
   top: 25px;
-  right: 8px;
+  right: 43px;
   border: 0;
   border-radius: 4px;
   padding: 8px;
@@ -379,7 +380,8 @@ h3 {
 /*PROJETOS*/
 
 .project {
-  height: 100vh;
+
+  padding: 2rem;
   background: linear-gradient(to left, #000000, #671553);
 }
 
@@ -597,10 +599,31 @@ h3 {
 
 .form {
   background-color: rgba(29, 64, 102, 0.2);
-  padding: 4rem;
+  padding: 1rem;
   width: 50%;
   border-radius: 5px;
   margin: 2rem auto 0 auto;
+}
+
+.inputs-paragrafo {
+  color: white;
+  padding: 10px;
+  margin-right: 467px;
+  font-family: "Utendo-Bold";
+  letter-spacing: 1px;
+  display: block;
+
+
+}
+
+.inputs-paragrafo-mensagem {
+  color: white;
+  padding: 10px;
+  margin-right: 415px;
+  margin-bottom: 5px;
+  font-family: "Utendo-Bold";
+  letter-spacing: 1px;
+  display: block;
 }
 
 input {
@@ -655,6 +678,7 @@ textarea {
   box-shadow: 5px 8px 20px rgba(246, 241, 241, 0.3);
 }
 
+
 /*FOOTER*/
 
 .footer {
@@ -695,6 +719,18 @@ textarea {
   text-decoration: underline;
 }
 
+
+/*RESPONSIVIDADE CONTATO*/
+@media screen and (max-width: 1815px) {
+
+  .inputs-paragrafo,
+  .inputs-paragrafo-mensagem {
+    text-align: left;
+    width: 60%;
+    margin: 0 auto 10px auto;
+  }
+}
+
 /*RESPONSIVIDADE CABEÇALHO*/
 
 @media (max-width: 1149px) {
@@ -704,14 +740,12 @@ textarea {
     flex-direction: row;
   }
 
-  .form {
-    width: 100%;
-  }
 
   input {
     font-size: 0.9rem;
   }
 }
+
 
 @media (max-width: 1024px) {
   .cabeçalho {
@@ -725,11 +759,18 @@ textarea {
     padding: 15px;
   }
 
-  .form {
-    width: 100%;
-  }
+
   .dark {
     display: none;
+  }
+
+  .form {
+    width: 80%;
+  }
+
+  input, textarea {
+    width: 80%;
+
   }
 }
 
@@ -740,13 +781,18 @@ textarea {
     flex-direction: row;
   }
 
-  .form {
-    width: 100%;
-  }
 
   .btn-contact {
     width: 50%;
   }
+
+  .title-p {
+    display: block;
+    font-size: 80%;
+    text-align: left;
+  }
+
+
 }
 
 /*RESPONSIVIDADE - MENU- MAIN*/
@@ -757,8 +803,8 @@ textarea {
   }
 
   .logo {
-    margin-top: 20px;
-    margin-right: 150px;
+    margin-top: 25px;
+    margin-right: 100px;
   }
 
   .menu {
@@ -770,6 +816,7 @@ textarea {
   }
 
   .text {
+    margin-top: 15%;
     height: 50vh;
   }
 
@@ -785,18 +832,30 @@ textarea {
     font-size: 1rem;
   }
 
-  .logo {
-    margin-top: 50px;
+  .slider {
+    width: 95%;
+  }
+
+  .paragrafo-container {
+
+    font-size: 91%;
+    text-align: left;
+  }
+
+  main {
+    height: unset;
   }
 }
 
 @media (max-width: 414px) {
-  .dark {
-    display: flex;
-    position: absolute;
-    bottom: 51px;
-    left: 91px;
+
+  .paragrafo-container {
+
+    font-size: 75%;
+    text-align: left;
+
   }
+
 }
 
 @media (max-width: 390px) {
@@ -807,12 +866,18 @@ textarea {
     gap: 10px;
   }
 
+  .paragrafo-container {
+
+    font-size: 75%;
+    text-align: left;
+  }
+
   .nav-links a {
     padding: 15px;
   }
 
   .slider {
-    width: 80%;
+    width: 95%;
   }
 
   .titles-project {
@@ -824,41 +889,9 @@ textarea {
     width: 300px;
   }
 
-  .form {
-    width: 100%;
-  }
 
   .btn-contact {
     width: 50%;
     font-size: 0.8rem;
   }
-}
-
-.dark {
-  width: 50px;
-  height: 30px;
-  background-color: #edfe3c;
-  border-radius: 150px;
-  position: relative;
-  cursor: pointer;
-}
-
-.dark .indicador {
-  width: 30px;
-  height: 30px;
-  background-color: #000000;
-  border-radius: 50%;
-  transform: scale(0.9);
-  position: absolute;
-  left: 0;
-  transition: 0.5s;
-}
-
-.dark.dark1 {
-  background-color: #000000;
-}
-
-.dark.dark1 .indicador {
-  left: 18px;
-  background-color: #edfe3c;
 }

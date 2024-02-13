@@ -31,13 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
   const currentYear = new Date().getFullYear();
   yearSpan.textContent = currentYear;
 });
-
-/*DARK MENU*/
-
-let darK = document.getElementById("darK");
-let body = document.querySelector("body");
-
-darK.addEventListener("click", () => {
-  darK.classList.toggle("dark1");
-  body.classList.toggle("dark1");
-});
+      
