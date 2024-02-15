@@ -412,15 +412,15 @@
             contato com você o mais breve possível.</p>
     
           <div class="form">
-            <form action="https://formsubmit.co/camilla_larissa7@hotmail.com" method="POST">
+            <form action="processar_formulario.php" method="POST">
               <label class="inputs-paragrafo">Nome</label>
-              <input type="text" name="Name" placeholder="Digite seu Nome*" required>
+              <input type="text" id="nome" name="nome" placeholder="Digite seu Nome*" required>
               <label class="inputs-paragrafo">Email</label>
-              <input type="email" name="email" placeholder="Digite seu Email*" required>
-              <label class="inputs-paragrafo-mensagem">Mensagem</label>
-              <textarea name="message" placeholder="Digite sua Mensagem*" rows="8" required> </textarea>
+              <input type="email"  id="email" name="email" placeholder="Digite seu Email*" required>
+              <label  class="inputs-paragrafo-mensagem">Mensagem</label>
+              <textarea id="mensagem" name="mensagem" rows="8" required> </textarea>
               <div>
-                <button class="btn-contact" type="submit">Enviar</button>
+                <input class="btn-contact" type="submit" value="Enviar">
               </div>
             </form>
           </div>
